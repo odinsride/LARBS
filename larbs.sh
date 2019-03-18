@@ -14,7 +14,7 @@ while getopts ":a:r:p:h" o; do case "${o}" in
 esac done
 
 # DEFAULTS:
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/odinsride/voidrice.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/odinsride/LARBS/master/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
 
@@ -197,11 +197,11 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 installationloop
 
 # Install the dotfiles in the user's home directory
-# putgitrepo "$dotfilesrepo" "/home/$name"
-# rm -f "/home/$name/README.md" "/home/$name/LICENSE"
+putgitrepo "$dotfilesrepo" "/home/$name"
+rm -f "/home/$name/README.md" "/home/$name/LICENSE"
 
 # Install the LARBS Firefox profile in ~/.mozilla/firefox/
-# putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
+putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
 
 # Pulseaudio, if/when initially installed, often needs a restart to work immediately.
 [ -f /usr/bin/pulseaudio ] && resetpulse
