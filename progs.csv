@@ -1,3 +1,4 @@
+Source,Package Name,Description
 ,i3-gaps,is the main graphical user interface and window manager.
 ,xorg-server,is the graphical server.
 ,xorg-xwininfo,allows querying information about windows.
